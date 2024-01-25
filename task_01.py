@@ -43,20 +43,20 @@ def insertion_sort(arr):
         arr[j + 1] = key
 
 
-# Генерація рандомного масиву для сортування
+# Generating a random array for sorting
 arr = [random.randint(0, 1000) for _ in range(1000)]
 
-# Вимір часу для сортування злиттям
+# Measure time for Merge Sort
 merge_sort_time = timeit.timeit(
     stmt="merge_sort(arr.copy())", globals=globals(), number=1000
 )
 
-# Вимір часу для сортування вставкою
+# Measure time for Insertion Sort
 insertion_sort_time = timeit.timeit(
     stmt="insertion_sort(arr.copy())", globals=globals(), number=1000
 )
 
-# Вимір часу для Timsort (вбудований в Python)
+# Measure time for Timsort (built-in in Python)
 timsort_time = timeit.timeit(stmt="sorted(arr.copy())", globals=globals(), number=1000)
 
 print(f"Merge Sort Time: {merge_sort_time}")
